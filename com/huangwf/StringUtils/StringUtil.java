@@ -17,23 +17,22 @@ public class StringUtil {
 	* @date: July 9, 2017 09:30:36 AM 
 	 */
 	public static String joinString(String srcString, String joinString, String separator) throws Exception{
-      
+	
+	
+	
+	}
   
-  
-  }
-  
-   public static boolean isBlank(String str)
-	    {
-          int strLen;
-          if(str == null || (strLen =str.length())==0){
+   	public static boolean isBlank(String str){
+           int strLen;
+           if(str == null || (strLen =str.length())==0){
               reeturn true;
-          }
-          for(int i=0;i < strLen;i++){
-            if(!Character.isWhitespace(str.charAt(i))){
+           }
+           for(int i=0;i < strLen;i++){
+             if(!Character.isWhitespace(str.charAt(i))){
                 return false;
+              }
             }
-          }
           return true;
-	    }
+	}
 
 }
