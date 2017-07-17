@@ -18,8 +18,28 @@ public class StringUtil {
 	 */
 	public static String joinString(String srcString, String joinString, String separator) throws Exception{
 	
-	
-	
+		if(isBlank(srcString)){
+			if(isBlank(joinString)){
+				return null;
+			}else{
+				return joinString;
+			}
+		}else{
+			if(isBlank(joinString)){
+			   return srcString;
+			}else{
+			   if(isBlank(separator)){
+			     return srcString.concat(joinString);
+			   }else{
+				if(srcString.lastIndexOf(separator) == srcString.length()-separator.length()){
+				   	return srcString.concat(joinString);
+				}else{
+					return srcString.concat(separator).concat(joinString);
+				}
+			   }
+			}
+		
+		}
 	}
   
    	public static boolean isBlank(String str){
