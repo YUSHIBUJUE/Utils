@@ -52,9 +52,10 @@ public class StringUtil {
 	 * @version: v1.0.0
 	 * @author: huangwf
 	 *
-	 * Modification History:
+ 	 * Modification History:
 	 * Date         Author          Version            Description
 	 *---------------------------------------------------------*
+	 * 2017-7-18     huangwf           v1.0.0               修改原因
 	 */
 	public static HashMap parseMap(String paramString) throws Exception {
 		HashMap arrayMap = new HashMap();
@@ -69,6 +70,36 @@ public class StringUtil {
 		}
 		return arrayMap;
 	}
+	
+	/**
+	 * 对字符串进行模糊化处理（第一个字符正常处理保留，后面的以*代替）
+	 * @Function: getMaskedStr
+	 * @Description: 对字符串进行模糊化处理（第一个字符保留，后面的以*代替）
+	 *
+	 * @param:	str 待处理的字符串
+	 * @return：返回结果描述
+	 * @throws：异常描述
+	 *
+	 * @version: v1.0.0
+	 * @author: huangwf
+	 *
+	 * Modification History:
+	 * Date         Author          Version            Description
+	 *---------------------------------------------------------*
+	 * 2017-7-18     huangwf           v1.0.0               修改原因
+	 */
+	public static String getMaskedStr(String str) throws Exception, RemoteException {
+		if (isNotBlank(str)) {
+			StringBuilder sb = new StringBuilder();
+			sb.append(str.charAt(0));
+			for (int i = 1; i < str.length(); i++) {
+				sb.append("*");
+			}
+			return sb.toString();
+		}
+		return str;
+	}
+	
    	public static boolean isBlank(String str){
            int strLen;
            if(str == null || (strLen =str.length())==0){
